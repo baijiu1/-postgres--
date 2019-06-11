@@ -1,129 +1,127 @@
-# Awesome Postgres 
+# 令人惊叹的 postgresql
 
-[PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL), often simply Postgres, is an [object-relational database](https://en.wikipedia.org/wiki/Object-relational_database) (ORDBMS). PostgreSQL is [ACID-compliant]
+PostgreSQL，通常只是Postgres，是一个对象关系数据库（ORDBMS）。PostgreSQL是符合ACID和事务性的。（见更多：维基百科：PostgreSQL，PostgreSQL.org）
 
 
 
-## Contents
+## 内容
 
-- [Awesome Postgres](#awesome-postgres-)
-    - [High-Availability](#high-availability)
-    - [Backups](#backups)
+- 令人惊叹的 postgresql
+    - [高可用性](#high-availability)
+    - [备份](#backups)
     - [GUI](#gui)
-    - [Distributions](#distributions)
+    - [分布](#distributions)
     - [CLI](#cli)
-    - [Server](#server)
-    - [Monitoring](#monitoring)
-    - [Extensions](#extensions)
-    - [Optimization](#optimization)
-    - [Utilities](#utilities)
-    - [Language bindings](#language-bindings)
+    - [服务](#server)
+    - [监控](#monitoring)
+    - [扩展](#extensions)
+    - [优化](#optimization)
+    - [公共事业](#utilities)
+    - [语言绑定](#language-bindings)
     - [PaaS (PostgreSQL as a Service)](#paas-postgresql-as-a-service)
     - [Docker images](#docker-images)
-- [Resources](#resources)
-    - [Tutorials](#tutorials)
-    - [Blogs](#blogs)
-    - [Articles](#articles)
-    - [Documentation](#documentation)
-    - [Newsletters](#newsletters)
-    - [Videos](#videos)
-    - [Community](#community)
+- [资源](#resources)
+    - [教程](#tutorials)
+    - [博客](#blogs)
+    - [文章](#articles)
+    - [文档](#documentation)
+    - [新闻](#newsletters)
+    - [视频](#videos)
+    - [社区](#community)
 
-### High-Availability
-* [BDR](https://github.com/2ndQuadrant/bdr) - BiDirectional Replication - a multimaster replication system for PostgreSQL
-* [Patroni](https://github.com/zalando/patroni) - Template for PostgreSQL HA with ZooKeeper or etcd.
-* [Stolon](https://github.com/sorintlab/stolon) - PostgreSQL HA based on Consul or etcd, with Kubernetes integration.
-* [pglookout](https://github.com/aiven/pglookout) - Replication monitoring and failover daemon.
-* [repmgr](https://github.com/2ndQuadrant/repmgr) - Open-source tool suite to manage replication and failover in a cluster of PostgreSQL servers.
-* [Slony-I](http://slony.info) - "Master to multiple slaves" replication system with cascading and failover.
-* [PAF](https://github.com/ClusterLabs/PAF) - PostgreSQL Automatic Failover: High-Availibility for Postgres, based on Pacemaker and Corosync.
-* [SkyTools](https://github.com/pgq/skytools-legacy) - Replication tools, including PgQ, a queuing system, and Londiste, a replication system a bit simpler to manage than Slony.
+### 高可用性
+* [BDR](https://github.com/2ndQuadrant/bdr) - 双向复制 - PostgreSQL的多主机复制系统
+* [Patroni](https://github.com/zalando/patroni) - 带有ZooKeeper或etcd的PostgreSQL HA模板。
+* [Stolon](https://github.com/sorintlab/stolon) - PostgreSQL HA基于Consul或etcd，与Kubernetes集成。
+* [pglookout](https://github.com/aiven/pglookout) - 复制监视和故障转移守护程序。
+* [repmgr](https://github.com/2ndQuadrant/repmgr) - 用于管理PostgreSQL服务器集群中的复制和故障转移的开源工具套件。
+* [Slony-I](http://slony.info) - 具有级联和故障转移功能的“Master to multiple slaves”复制系统。
+* [PAF](https://github.com/ClusterLabs/PAF) - PostgreSQL自动故障转移：Postgres的高可用性，基于Pacemaker和Corosync。
+* [SkyTools](https://github.com/pgq/skytools-legacy) - 复制工具，包括排队系统PgQ和Londiste，这是一个比Slony管理起来更简单的复制系统。
 
 ### Backups
-* [Barman](https://www.pgbarman.org/index.html) - Backup and Recovery Manager for PostgreSQL by 2ndQuadrant.
-* [OmniPITR](https://github.com/omniti-labs/omnipitr) - Advanced WAL File Management Tools for PostgreSQL.
-* [pg\_probackup](https://github.com/postgrespro/pg_probackup) – A fork of pg\_arman, improved by @PostgresPro, supports incremental backups, backups from replica, multithreaded backup and restore, and anonymous backup without archive command.
-* [pgBackRest](https://pgbackrest.org/)  - Reliable PostgreSQL Backup & Restore.
-* [pg\_back](https://github.com/orgrim/pg_back/) - pg\_back is a simple backup script
-* [pghoard](https://github.com/aiven/pghoard) - Backup and restore tool for cloud object stores (AWS S3, Azure, Google Cloud, OpenStack Swift).
-* [wal-e](https://github.com/wal-e/wal-e) - Simple Continuous Archiving for PostgreSQL to S3, Azure, or Swift by Heroku.
-* [wal-g](https://github.com/wal-g/wal-g) - The successor of WAL-E rewritten in Go. Currently supports S3 only.
-* [pitrery](https://dalibo.github.io/pitrery/) - pitrery is a set of Bash scripts to manage Point In Time Recovery (PITR) backups for PostgreSQL.
+* [Barman](https://www.pgbarman.org/index.html) - 2ndQuadrant的PostgreSQL备份和恢复管理器。
+* [OmniPITR](https://github.com/omniti-labs/omnipitr) - PostgreSQL的高级WAL文件管理工具。
+* [pg\_probackup](https://github.com/postgrespro/pg_probackup) – 由@PostgresPro改进的pg_arman的分支，支持增量备份，从副本备份，多线程备份和还原，以及无归档命令的匿名备份。
+* [pgBackRest](https://pgbackrest.org/)  - 可靠的PostgreSQL备份和恢复。
+* [pg\_back](https://github.com/orgrim/pg_back/) - pg_back是一个简单的备份脚本
+* [pghoard](https://github.com/aiven/pghoard) - 云对象存储的备份和恢复工具（AWS S3，Azure，Google Cloud，OpenStack Swift）。
+* [wal-e](https://github.com/wal-e/wal-e) - Heroku将PostgreSQL简单连续存档到S3，Azure或Swift。
+* [wal-g](https://github.com/wal-g/wal-g) - 在Go中重写的WAL-E的继承者。目前仅支持S3。
+* [pitrery](https://dalibo.github.io/pitrery/) - pitrery是一组用于管理PostgreSQL的即时恢复（PITR）备份的Bash脚本。
 
 ### GUI
-* [Adminer](https://www.adminer.org/) - Full-featured database management tool written in PHP.
-* [OmniDB](https://omnidb.org/en/) - Open Source Collaborative Environment
-For Database Management
-* [DataGrip](https://www.jetbrains.com/datagrip/) - IDE with advanced tool sets and good cross-platform experience (Commercial Software).
-* [Datazenit](https://datazenit.com/) - Web-based PostgreSQL GUI (Commercial Software).
-* [DBeaver](https://dbeaver.io/) - Universal Database Manager with excellent support for PostgreSQL.
-* [dbglass](http://dbglass.web-pal.com) - Cross-platform desktop client for PostgreSQL, built with Electron.
-* [Holistics](https://www.holistics.io/) - Online cross platform database management tool and SQL query reporting GUI with strong PostgreSQL support (Commercial Software).
-* [JackDB](https://www.jackdb.com/) - Web-based SQL query interface (Commercial Software).
-* [Metabase](https://www.metabase.com/) - Simple dashboards, charts and query tool for PostgreSQL.
-* [Numeracy](https://numeracy.co/) - Fast SQL editor with charts and dashboards for PostgreSQL (Commercial Software).
-* [pgAdmin](https://www.pgadmin.org/) - PostgreSQL Administration and Management GUI.
-* [pgModeler](https://pgmodeler.io/) - pgModeler is an open-source PostgreSQL Database Modeler.
-* [pgweb](https://github.com/sosedoff/pgweb) - Web-based PostgreSQL database browser written in Go.
-* [phpPgAdmin](https://github.com/phppgadmin/phppgadmin) - The Premier Web Based Administration Tool for PostgreSQL.
-* [Postbird](https://github.com/Paxa/postbird) - PostgreSQL Client for macOS.
-* [Postico](https://eggerapps.at/postico/) - Modern PostgreSQL Client for macOS (Commercial Software).
-* [PSequel](http://www.psequel.com/) - Clean and simple interface to perform common PostgreSQL tasks quickly (Commercial Software).
-* [SQL Tabs](http://www.sqltabs.com/) - Cross Platform Desktop Client for PostgreSQL written in JS.
-* [SQLPro for Postgres](http://macpostgresclient.com/) - Simple, powerful PostgreSQL manager for macOS (Commercial Software).
-* [temBoard](https://github.com/dalibo/temboard) - Web-based PostgreSQL GUI and monitoring.
-* [TablePlus](https://tableplus.io/) - Native App which let you edit database and structure. High-end security ensured (Commercial Software).
-* [TeamSQL](https://teamsql.io/) - Cross-platform SQL Client: Simple, Effortless, Extensible.
-* [Valentina Studio](https://www.valentina-db.com/en/valentina-studio-overview) - Cross-platform database administration tool (Free/Commercial)
-* [PostgresCompare](https://www.postgrescompare.com) - Cross-platform database comparison and deployment tool (Commercial Software).
+* [Adminer](https://www.adminer.org/) - 用PHP编写的全功能数据库管理工具。
+* [OmniDB](https://omnidb.org/en/) - 数据库管理的开源协作环境
+* [DataGrip](https://www.jetbrains.com/datagrip/) - 具有高级工具集和良好的跨平台经验的IDE（商业软件）。
+* [Datazenit](https://datazenit.com/) - 基于Web的PostgreSQL GUI（商业软件）。
+* [DBeaver](https://dbeaver.io/) - 通用数据库管理器，对PostgreSQL提供出色的支持。
+* [dbglass](http://dbglass.web-pal.com) - PostgreSQL的跨平台桌面客户端，使用Electron构建。
+* [Holistics](https://www.holistics.io/) - 具有强大PostgreSQL支持的在线跨平台数据库管理工具和SQL查询报告GUI（商业软件）。
+* [JackDB](https://www.jackdb.com/) - 基于Web的SQL查询界面（商业软件）。
+* [Metabase](https://www.metabase.com/) - PostgreSQL的简单仪表板，图表和查询工具。
+* [Numeracy](https://numeracy.co/) - 带有PostgreSQL（商业软件）图表和仪表板的快速SQL编辑器。
+* [pgAdmin](https://www.pgadmin.org/) - PostgreSQL管理和管理GUI。
+* [pgModeler](https://pgmodeler.io/) - pgModeler是一个开源的PostgreSQL数据库建模器。
+* [pgweb](https://github.com/sosedoff/pgweb) - 用Go编写的基于Web的PostgreSQL数据库浏览器。
+* [phpPgAdmin](https://github.com/phppgadmin/phppgadmin) - PostgreSQL的Premier Web管理工具。
+* [Postbird](https://github.com/Paxa/postbird) - 用于macOS的PostgreSQL客户端。
+* [Postico](https://eggerapps.at/postico/) - 用于macOS的现代PostgreSQL客户端（商业软件）。
+* [PSequel](http://www.psequel.com/) - 简洁的界面，可快速执行常见的PostgreSQL任务（商业软件）。
+* [SQL Tabs](http://www.sqltabs.com/) - 用JS编写的PostgreSQL跨平台桌面客户端。
+* [SQLPro for Postgres](http://macpostgresclient.com/) - 用于macOS（商业软件）的简单，强大的PostgreSQL管理器。
+* [temBoard](https://github.com/dalibo/temboard) - 基于Web的PostgreSQL GUI和监控。
+* [TablePlus](https://tableplus.io/) - 允许您编辑数据库和结构的Native App。确保高端安全性（商业软件）。
+* [TeamSQL](https://teamsql.io/) - 跨平台SQL客户端：简单，轻松，可扩展。
+* [Valentina Studio](https://www.valentina-db.com/en/valentina-studio-overview) - 跨平台数据库管理工具（免费/商业）
+* [PostgresCompare](https://www.postgrescompare.com) - 跨平台数据库比较和部署工具（商业软件）。
 
-### Distributions
-* [Postgres.app](https://postgresapp.com/) - The Easiest Way to Get Started with PostgreSQL on macOS.
-* [PostgreSql.Binaries.Lite](https://github.com/mihasic/PostgreSql.Binaries.Lite) - Minimum set of Windows binaries of the PostgreSQL database. Also made available through NuGet.
+### 分布
+* [Postgres.app](https://postgresapp.com/) - 在macOS上开始使用PostgreSQL的最简单方法。
+* [PostgreSql.Binaries.Lite](https://github.com/mihasic/PostgreSql.Binaries.Lite) - PostgreSQL数据库的最小Windows二进制文件集。也通过NuGet提供。
 
 ### CLI
-* [pgcli](https://github.com/dbcli/pgcli) - Postgres CLI with autocompletion and syntax highlighting
-* [psql](https://www.postgresql.org/docs/current/static/app-psql.html) - The built-in PostgreSQL CLI client
-* [psql2csv](https://github.com/fphilipe/psql2csv) - Run a query in psql and output the result as CSV
+* [pgcli](https://github.com/dbcli/pgcli) - Postgres CLI具有自动完成和语法突出显示功能
+* [psql](https://www.postgresql.org/docs/current/static/app-psql.html) - 内置的PostgreSQL CLI客户端
+* [psql2csv](https://github.com/fphilipe/psql2csv) - 在psql中运行查询并将结果输出为CSV
 
 ### Server
-* [Postgres-XL](https://www.postgres-xl.org/) - Scalable Open Source PostgreSQL-based Database Cluster.
-* [AgensGraph](https://bitnine.net/) - Powerful graph database based on the PostgreSQL.
-* [Greenplum Database](https://github.com/greenplum-db/gpdb) - Open source fork of PostgreSQL for large data volumes.
+* [Postgres-XL](https://www.postgres-xl.org/) - 基于PostgreSQL的可扩展开源数据库集群。
+* [AgensGraph](https://bitnine.net/) - 基于PostgreSQL的强大图形数据库。
+* [Greenplum Database](https://github.com/greenplum-db/gpdb) - 用于大数据量的PostgreSQL的开源分支。
 
-### Monitoring
-* [check\_pgactivity](https://github.com/OPMDG/check_pgactivity) - check\_pgactivity is designed to monitor PostgreSQL clusters from Nagios. It offers many options to measure and monitor useful performance metrics.
-* [Check\_postgres](https://github.com/bucardo/check_postgres) - Nagios check\_postgres plugin for checking status of PostgreSQL databases.
-* [Instrumental](https://github.com/Instrumental/instrumentald) - Real-time performance monitoring, including [pre-made graphs](https://instrumentalapp.com/docs/instrumentald/postgresql#suggested-graphs) for ease of setup (Commercial Software)
-* [libzbxpgsql](https://github.com/cavaliercoder/libzbxpgsql) - Comprehensive PostgreSQL monitoring module for Zabbix.
-* [Pome](https://github.com/rach/pome) - Pome stands for PostgreSQL Metrics. Pome is a PostgreSQL Metrics Dashboard to keep track of the health of your database.
-* [pg\_view](https://github.com/zalando/pg_view) - Open-source command-line tool that shows global system stats, per-partition information, memory stats and other information.
-* [pgwatch2](https://github.com/cybertec-postgresql/pgwatch2) - Flexible and easy to get started PostgreSQL metrics monitor focusing on Grafana dashboards.
-* [pgbench](https://www.postgresql.org/docs/devel/static/pgbench.html) - Run a benchmark test on PostgreSQL.
-* [opm.io](http://opm.io) -  Open PostgreSQL Monitoring is a free software suite designed to help you manage your PostgreSQL servers. It can gather stats, display dashboards and send warnings when something goes wrong.
+### 监控
+* [check\_pgactivity](https://github.com/OPMDG/check_pgactivity) - check_pgactivity旨在监控Nagios中的PostgreSQL集群。它提供了许多选项来衡量和监控有用的性能指标。
+* [Check\_postgres](https://github.com/bucardo/check_postgres) - 用于检查PostgreSQL数据库状态的Nagios check_postgres插件。
+* [Instrumental](https://github.com/Instrumental/instrumentald) - 实时性能监控，包括易于设置的[pre-made graphs](https://instrumentalapp.com/docs/instrumentald/postgresql#suggested-graphs) （商业软件） 
+* [libzbxpgsql](https://github.com/cavaliercoder/libzbxpgsql) - Zabbix的综合PostgreSQL监控模块。
+* [Pome](https://github.com/rach/pome) - Pome代表PostgreSQL指标。Pome是一个PostgreSQL指标仪表板，用于跟踪数据库的运行状况。
+* [pg\_view](https://github.com/zalando/pg_view) - 开源命令行工具，显示全局系统统计信息，每个分区信息，内存统计信息和其他信息。
+* [pgwatch2](https://github.com/cybertec-postgresql/pgwatch2) - 灵活且易于上手的PostgreSQL指标监控重点关注Grafana仪表板。
+* [pgbench](https://www.postgresql.org/docs/devel/static/pgbench.html) - 在PostgreSQL上运行基准测试。
+* [opm.io](http://opm.io) -  Open PostgreSQL Monitoring是一个免费软件套件，旨在帮助您管理PostgreSQL服务器。它可以收集统计信息，显示仪表板并在出现问题时发送警告。
+### 扩展
+* [Citus](https://github.com/citusdata/citus) - 可扩展的PostgreSQL集群，用于实时工作负载。
+* [cstore\_fdw](https://github.com/citusdata/cstore_fdw) - 使用PostgreSQL进行分析的列式存储。
+* [cyanaudit](https://pgxn.org/dist/cyanaudit/) - Cyan Audit以逐列为基础提供所有DML活动的数据库内日志记录。
+* [pglogical](https://github.com/2ndQuadrant/pglogical) - 提供逻辑流复制的扩展。
+* [pg\_partman](https://github.com/pgpartman/pg_partman) - PostgreSQL的分区管理扩展。
+* [pg\_paxos](https://github.com/citusdata/pg_paxos/) - PostgreSQL节点集群的Paxos和基于Paxos的表复制的基本实现。
+* [pg\_shard](https://github.com/citusdata/pg_shard) - 扩展以扩展实时读写。
+* [PGStrom](https://wiki.postgresql.org/wiki/PGStrom) - 将CPU密集型工作负载卸载到GPU的扩展。
+* [pgxn](https://pgxn.org/) PostgreSQL Extension Network - PostgreSQL扩展网络 - 许多开源PostgreSQL扩展的中心分发点
+* [PipelineDB](https://www.pipelinedb.com/) - PostgreSQL扩展，在流上连续运行SQL查询，逐步将结果存储在表中。
+* [plpgsql\_check](https://github.com/okbob/plpgsql_check) - 允许检查plpgsql源代码的扩展。
+* [PostGIS](http://postgis.net/) - PostgreSQL的空间和地理对象。
+* [PG\_Themis](https://github.com/cossacklabs/pg_themis) - Postgres绑定作为加密库Themis的扩展，在PgSQL方面提供各种安全服务。
+* [zomboDB](https://github.com/zombodb/zombodb) - 通过使用Elasticsearch支持的索引实现高效全文搜索的扩展。
+* [pgMemento](https://github.com/pgMemento/pgMemento) - 使用PL / pgSQL编写的触发器和服务器端函数为PostgreSQL数据库内的数据提供审计跟踪。
+* [Timescale](https://www.timescale.com/) - 与Postgres完全兼容的开源时间序列数据库，作为扩展分发
+* [pgTAP](https://pgtap.org/) - Postgres的数据库测试框架
+* [HypoPG](https://github.com/HypoPG/hypopg) - HypoPG提供假设/虚拟索引功能。
+* [pgRouting](https://github.com/pgRouting/pgrouting) - pgRouting扩展了PostGIS / PostgreSQL地理空间数据库，以提供地理空间路由和其他网络分析功能。
 
-### Extensions
-* [Citus](https://github.com/citusdata/citus) - Scalable PostgreSQL cluster for real-time workloads.
-* [cstore\_fdw](https://github.com/citusdata/cstore_fdw) - Columnar store for analytics with PostgreSQL.
-* [cyanaudit](https://pgxn.org/dist/cyanaudit/) - Cyan Audit provides in-database logging of all DML activity on a column-by-column basis.
-* [pglogical](https://github.com/2ndQuadrant/pglogical) - Extension that provides logical streaming replication.
-* [pg\_partman](https://github.com/pgpartman/pg_partman) - Partition management extension for PostgreSQL.
-* [pg\_paxos](https://github.com/citusdata/pg_paxos/) - Basic implementation of Paxos and Paxos-based table replication for a cluster of PostgreSQL nodes.
-* [pg\_shard](https://github.com/citusdata/pg_shard) - Extension to scale out real-time reads and writes.
-* [PGStrom](https://wiki.postgresql.org/wiki/PGStrom) - Extension to offload CPU intensive workloads to GPU.
-* [pgxn](https://pgxn.org/) PostgreSQL Extension Network - central distribution point for many open-source PostgreSQL extensions
-* [PipelineDB](https://www.pipelinedb.com/) - A PostgreSQL extension that runs SQL queries continuously on streams, incrementally storing results in tables.
-* [plpgsql\_check](https://github.com/okbob/plpgsql_check) - Extension that allows to check plpgsql source code.
-* [PostGIS](http://postgis.net/) - Spatial and Geographic objects for PostgreSQL.
-* [PG\_Themis](https://github.com/cossacklabs/pg_themis) - Postgres binding as extension for crypto library Themis, providing various security services on PgSQL's side.
-* [zomboDB](https://github.com/zombodb/zombodb) - Extension that enables efficient full-text searching via the use of indexes backed by Elasticsearch.
-* [pgMemento](https://github.com/pgMemento/pgMemento) - Provides an audit trail for your data inside a PostgreSQL database using triggers and server-side functions written in PL/pgSQL.
-* [Timescale](https://www.timescale.com/) - Open-source time-series database fully compatible with Postgres, distributed as extension
-* [pgTAP](https://pgtap.org/) - Database testing framework for Postgres
-* [HypoPG](https://github.com/HypoPG/hypopg) - HypoPG provides hypothetical/virtual indexes feature.
-* [pgRouting](https://github.com/pgRouting/pgrouting) - pgRouting extends the PostGIS/PostgreSQL geospatial database to provide geospatial routing and other network analysis functionality.
-
-### Optimization
+### 优化
 * [PgHero](https://github.com/ankane/pghero) - PostgreSQL insights made easy.
 * [pgtune](https://github.com/gregs1104/pgtune/) - PostgreSQL configuration wizard.
 * [pgtune](https://github.com/le0pard/pgtune) - Online version of PostgreSQL configuration wizard.
